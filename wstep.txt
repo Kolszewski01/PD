@@ -1,0 +1,67 @@
+KLAUZULE 
+Literał pozytywny – formuła atomowa (krótko: atom)
+Literał  negatywny – negacja atomu 
+Literał – literał pozytywny lub negatywny 
+
+STAŁE - Symboliczne nazwy obiektów występujących w programie 
+NP: 
+ania
+1234                                     
+‘Marek Tyc’ 
+rs152                               
+0 
+marek_tyc                       
+-23.6                                      
+===> 
+grupa_1A 
+Dowolny ciąg utworzony ze znaków: ~  @  $  %  ^  &  *  -  +  =  |  \  :  <  >  .  ?  / 
+Pary nawiasów: [ ]   { } 
+Pojedyncze znaki: !  ;   ,
+
+ZMIENNE - Służą do symbolicznego przedstawiania nazw obiektów, które nie są w danej chwili znane
+NP:
+X, Y , Z 
+Wartsc_towaru 
+_zmienna 
+_ 
+
+TERMY ZŁOŻONE - Termy złożone tworzymy z innych termów za pomocą symboli funkcyjnych (funktorów)
+NP:
+autor (adam, mickiewicz) 
+ksiazka (autor (adam, mickiewicz), ‘Pan Tadeusz’, 1981) 
+
+PREDYKATY - Opisują związki zachodzące między obiektami 
+NP:
+lubi (marta, wino)
+ kobieta(marta) 
+
+KLAUZULA - fakt lub reguła.
+
+FAKT -  Bezwarunkowo prawdziwe stwierdzenie o istnieniu pewnych powiązań (relacji) między obiektami.
+NP:
+student(marcin). 			Marcin jest studentem.
+lubi(ewa, marek).			Ewa lubi Marka.
+synonim(fiasko, krach).		Słowa fiaskoi krachsą synonimami.
+matka(anna).			Anna jest matką.
+matka(joanna, piotr).		Joanna jest matką Piotra
+rodzice(jan, maria, ewa).	Jan i Maria są rodzicami Ewy.
+
+REGUŁA - Warunkowe stwierdzenie istnienia pewnych powiązań (relacji) między obiektami.
+NP:
+lubi (marta, X) :-mezczyzna (X),przystojny (X), jezdzi (X, porsche).		Marta lubi przystojnych mężczyzn, którzy jeżdżą Porsche.
+siostra (S, X) :-kobieta (S), rodzice (O, M, S),  rodzice (O, M, X).		S jest siostrą X, jeżeli jest kobietą oraz S i X maja tych samych rodziców.
+powierzchnia(X, Y) :-dlugosc (X, D), szerokosc (X, S), Y is D*S.			Powierzchnia Y prostokąta X jest równa iloczynowi długości D i szerokości S 
+													tego prostokąta.
+
+
+PRZYKLADOWE CELE:
+?-lubi (marta, jan).				Czy Marta lubi Jana?
+?-lubi (jan, X), lubi (marta,X). 		Kto jest lubiany jednocześnie przez Martę i Jana?
+?-lubi (jan, _ ).					Czy Jan kogoś lubi?
+
+PORZĄDEK TERMÓW:
+1. Zmienne  <  Liczby  <   Atomy <  Termy złożone.
+2. Stare Zmienne  <  Nowe Zmienne 
+3. Atomy są porównywane alfabetycznie. 
+4. Liczby są porównywane według wartości. Liczby całkowite i rzeczywiste są traktowane jednakowo. 
+5. Termy złożone są porządkowane najpierw według liczby argumentów, następnie alfabetycznie według nazw funktorów i ostatecznie rekurencyjnie według argumentów poczynając od lewej strony. 
