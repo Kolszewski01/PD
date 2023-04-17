@@ -65,3 +65,63 @@ PORZĄDEK TERMÓW:
 3. Atomy są porównywane alfabetycznie. 
 4. Liczby są porównywane według wartości. Liczby całkowite i rzeczywiste są traktowane jednakowo. 
 5. Termy złożone są porządkowane najpierw według liczby argumentów, następnie alfabetycznie według nazw funktorów i ostatecznie rekurencyjnie według argumentów poczynając od lewej strony. 
+
+Zad2 
+kobieta(ala).        /
+kobieta(ola).        /
+kobieta(kasia).        /
+mezczyzna(piotr).        /
+mezczyzna(adam).        /
+madra(ala).            /    fakty
+bogata(ala).        /
+piekna(ola).        /
+bogata(ola).        /
+piekna(kasia).        /
+madra(kasia).        /
+szczesliwy(X):-bogata(X).                    [
+lubi(X,Y):-mezczyzna(X),piekna(Y),kobieta(Y).        [    reguly
+
+mamy 7 predykatów:
+kobieta, mezczyzna, madry, piekny, bogaty, szczesliwy, lubi
+
+?-bogata(ala).
+?-lubi(piotr,X).
+?-lubi(adam,).
+?-szczesliwy(X).
+
+p(a,c).
+p(X,Y):=q(X,Z),r(Z,Y).
+q(a,b).
+q(c,a).
+r(a,d).
+r(b,c).
+
+?-p(X,c). -> p(a,c)
+
+Zad 4
+
+//ilosc
+lista_length([],0).
+lista_length([H|T],L,W):-lista_length(T,Tlength), T is Tlength+1.
+
+//sumowanie
+lista_sum([],0).
+lista_sum([H|T],N) :-lista_sum(T,N1),N is N1+H.
+
+
+Zad 5
+
+X=[1], T=[]
+
+X=b, Y=? nie mozna uzgodnić
+
+X=ania, Y=baska, T=[]
+
+H=1, H2=2, T=3
+
+X=a, Y=b, C=a, D=a, X=b nie mozna uzgodnic
+
+Zad 6
+
+mniejszao5(X,Y):-Y is X-5.
+mniejsza_lista(L1,L2):-maplist(mniejszao5,L1,L2)
