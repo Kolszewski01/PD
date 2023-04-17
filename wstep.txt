@@ -89,25 +89,6 @@ kobieta, mezczyzna, madry, piekny, bogaty, szczesliwy, lubi
 ?-lubi(adam,).
 ?-szczesliwy(X).
 
-p(a,c).
-p(X,Y):=q(X,Z),r(Z,Y).
-q(a,b).
-q(c,a).
-r(a,d).
-r(b,c).
-
-?-p(X,c). -> p(a,c)
-
-Zad 4
-
-//ilosc
-lista_length([],0).
-lista_length([H|T],L,W):-lista_length(T,Tlength), T is Tlength+1.
-
-//sumowanie
-lista_sum([],0).
-lista_sum([H|T],N) :-lista_sum(T,N1),N is N1+H.
-
 
 Zad 5
 
@@ -121,7 +102,20 @@ H=1, H2=2, T=3
 
 X=a, Y=b, C=a, D=a, X=b nie mozna uzgodnic
 
+Zad 4
+
+//ilosc
+lista_length([],0).
+lista_length([H|T],L,W):-lista_length(T,Tlength), T is Tlength+1.
+
+//sumowanie
+lista_sum([],0).
+lista_sum([H|T],N) :-lista_sum(T,N1),N is N1+H.
+
+
 Zad 6
 
 mniejszao5(X,Y):-Y is X-5.
 mniejsza_lista(L1,L2):-maplist(mniejszao5,L1,L2)
+
+
