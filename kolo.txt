@@ -1,0 +1,136 @@
+IV
+
+zad1
+sprawdz :: Int -> String
+sprawdz x
+ | x < 0 = "Liczba ujemna"
+ | x > 2  = "Liczba wieksza od 2"
+ | otherwise = "Liczba z przedzialu od 0 do 2"
+
+zad2.
+fun :: Num x => x -> x #ogolny
+fun :: Int -> Int #konkretny
+fun x
+ | x > 3 = 3*x
+ | x < (-3) = 5*x*x
+ | otherwise = 4
+
+zad3.
+implikacja :: Bool -> Bool -> Bool
+implikacja x y = if x == True && y == False then False else True
+
+max :: Int -> Int -> Int
+max x y = if x > y then x else y
+
+zad4.
+a. razy_dwa x = x*2
+   lista_razy_dwa :: [Int] -> [Int]
+   lista_razy_dwa [] = []
+   lista_razy_dwa (x:xs) = (razy_dwa x) : (lista_razy_dwa xs)
+
+b. lista_razy_dwa :: [Int] -> [Int]
+   lista_razy_dwa xs = [ 2*x | x <- xs]
+
+c. razy_dwa x = x*2
+   lista_razy_dwa x = map razy_dwa x
+
+zad5.
+1. map kwadrat [3,2,5]++reverse[1,2,3]
+  [9,4,25]++[3,2,1]
+  [9,4,25,3,2,1]
+2. (reverse[4,6,7]++[2,3])!!1  
+   [7,6,4,2,3]
+   6
+3.[2*3:tail[3,1]] 
+  [6:[1]]
+  [6,1]
+4.[x+2| x<-[1,4..10]]
+  [1+2,4+2,7+2,10+2]
+  [3,6,9,12]
+5.[(x,y)| x<-[1,3..5],y<-[x..5]]
+  [(1,1),12,13,14,15,33,35,55]
+  
+  
+  koniunkcja :: Bool -> Bool -> Bool
+  koniunkcja x y = if x == True && y == True then True else False
+  
+  alternatywa :: Bool -> Bool -> Bool
+  alternatywa x y = if x == False && y == False then False else True
+  
+  implikacja :: Bool -> Bool -> Bool  
+  implikacja x y = if x == True && y == False then False else True
+  
+  rownowaznosc :: Bool -> Bool -> Bool  
+  rownowaznosc x y = if x == y then True else False
+  
+  alternatywa_wykluczajaca :: Bool -> Bool  -> Bool
+  alternatywa_wykluczajaca x y = if x == y then False else True
+  
+  I
+  
+  zad 1
+
+sprawdz :: Int -> String
+sprawdz x
+ | x > 0 = "liczba dodatnia"
+ | x < -10 = "liczba mniejsza od -10"
+ | otherwise = "liczba z przedziału od -10 do 0"
+
+zad 2
+sprawdz :: Num x => x -> x  # typ ogólny
+sprawdz :: Int -> Int # typ konkretny
+spradz x
+ | x > 2 = x*x
+ | x < (-2) = x - 1
+ | otherwise = 5 * x
+
+zad 3
+maksimum :: Int -> Int -> Int
+maksimum x y = if x > y then x else y 
+
+
+zad 4
+a)
+szescian x = x*x*x
+szecian_lista :: [Int] -> [Int]
+szecian_lista [] = []
+szecian_lista (x:xs) = (szecian x) : (szecian_lista xs)
+
+b)
+
+szecian_lista :: [Int] -> [Int]
+szecian_lista xs = [ x*x*x | x <- xs]
+
+c)
+
+szescian x = x*x*x
+szecian_lista xs = map szecian x
+
+zad5.
+1.
+map razy_2 [2,3,1]++tail[1,[5,4],[3]]
+[4,6,2]++[[5,4],[3]]
+[4,6,2,[5,4],[3]]
+
+2.
+
+(3*4:1:4:[5,2])!!3
+[12,1,4,5,2]!!3
+5
+
+3.
+head[[3,4,5]]++reverse[5,2,1]
+[3,4,5]++[1,2,5]
+[3,4,5,1,2,5]
+
+4.
+
+[x*x|x<-[1,3..10]] [1,3,5,7,9]
+[1,9,25,49,81]
+
+5.
+[(x,y)|x<-[1..3],y<-[x..4]]
+[(1,1),(1,2),(1,3),(1,4),(2,2),(2,3),(2,4),(3,3),(3,4)]
+  
+
+
